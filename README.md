@@ -1,3 +1,3 @@
 # My Acting Site
 
-[Adam Mosebach](https//www.AdamMosebach.com)
+[Adam Mosebach](http//www.AdamMosebach.com)
