@@ -1,10 +1,18 @@
 import './App.css';
-import Layout from './Layout'
+import { Route, Switch } from 'react-router-dom';
+import greyWood from './images/greyWood.jpeg'
+import Banner from './Banner';
+import Home from './components/Home';
 
 function App() {
   return (
-    <div className="App">
-      <Layout />
+    <div className='App' style={{ backgroundImage: `url(${greyWood})` }}>
+      <Banner />
+      <Switch>
+        <Route exact path='/'>
+          <Home />
+        </Route>
+      </Switch>
     </div>
   );
 }

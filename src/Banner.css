@@ -1,0 +1,25 @@
+.layout-div {
+  position: relative;
+  height: 100vh;
+}
+.banner {
+  margin: 0;
+  width: 100%;
+  height: 15vh;
+  line-height: 20vh;
+  background-color: black;
+  font-size: 5.5vh;
+  color: rgb(79, 14, 79);
+  text-align: left;
+  font-family: cursive;
+}
+.banner-name {
+  margin: 0;
+}
+.bg-img {
+  z-index: -5;
+  /* position: absolute; */
+  /* padding-left: 0; */
+  /* height: 90vh;
+  width: 100vw; */
+}
