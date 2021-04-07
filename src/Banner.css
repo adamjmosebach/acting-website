@@ -12,11 +12,17 @@
   color: rgb(79, 14, 79);
   text-align: left;
   font-family: cursive;
+  display: flex;
+  justify-content: space-between;
 }
 .banner-name {
   height: 15vh;
   margin: 0;
+  display: inline-block;
+  vertical-align: baseline;
 }
-/* .bg-img {
-  z-index: -5;
-} */
+.banner-nav {
+  display: inline-flex;
+  justify-content: space-evenly;
+  margin-left: 2vw;
+}

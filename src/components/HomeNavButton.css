@@ -1,3 +1,22 @@
+.home-nav-button-link {
+  text-decoration: none;
+  color: orange;
+}
 .home-nav-button {
-  background: grey;
+  background: rgb(130, 114, 136);
+  /* background-color: rgb(172, 112, 2); */
+  border: 2px solid purple;
+  box-shadow: -5px 5px 10px black;
+  border-radius: 5px;
+  width: 20vw;
+  height: 3vw;
+  line-height: 3vw;
+  text-decoration: none;
+  font-weight: 700;
+  margin: 2vw;
+  /* transition-timing-function: all linear; */
+}
+.home-nav-button:hover {
+  box-shadow: none;
+  transform: scale(0.9);
 }
