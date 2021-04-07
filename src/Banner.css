@@ -14,12 +14,9 @@
   font-family: cursive;
 }
 .banner-name {
+  height: 15vh;
   margin: 0;
 }
-.bg-img {
+/* .bg-img {
   z-index: -5;
-  /* position: absolute; */
-  /* padding-left: 0; */
-  /* height: 90vh;
-  width: 100vw; */
-}
+} */
