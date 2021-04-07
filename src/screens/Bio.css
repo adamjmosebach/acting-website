@@ -1,3 +1,25 @@
 .bio-div {
   color: white;
+  display: flex;
+  align-items: center;
+  height: 85vh;
+  justify-content: space-evenly;
+}
+.bio-pic {
+  height: 70vh;
+}
+.bio-container {
+  height: 70vh;
+  width: 50vw;
+  background-color: rgba(0, 0, 0, 0.35);
+  /* border-radius: 25%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bio {
+  /* margin: 3vw; */
+  width: 85%;
+  line-height: 25px;
+  color: rgb(245, 235, 224);
 }

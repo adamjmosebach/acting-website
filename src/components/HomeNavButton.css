@@ -17,6 +17,8 @@
   /* transition-timing-function: all linear; */
 }
 .home-nav-button:hover {
-  box-shadow: none;
-  transform: scale(0.9);
+  box-shadow: -8px 8px 15px black;
+  transform: scale(1.15);
+  color: rgb(130, 114, 136);
+  background-color: orange;
 }
