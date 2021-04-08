@@ -17,6 +17,9 @@
   align-items: center;
   justify-content: center;
 }
+.bio-hi {
+  color: rgb(248, 210, 139);
+}
 .bio {
   /* margin: 3vw; */
   width: 85%;

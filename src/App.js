@@ -6,6 +6,7 @@ import Banner from './Banner';
 import Home from './screens/Home';
 import Media from './screens/Media'
 import Bio from './screens/Bio'
+import Resume from './screens/Resume'
 
 function App() {
 
@@ -23,6 +24,9 @@ function App() {
         </Route>
         <Route path='/bio'>
           <Bio updateBannerNav={updateBannerNav} />
+        </Route>
+        <Route path='/resume'>
+          <Resume updateBannerNav={updateBannerNav} />
         </Route>
       </Switch>
     </div>

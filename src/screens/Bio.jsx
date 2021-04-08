@@ -11,7 +11,7 @@ function Bio({ updateBannerNav }) {
       <img src={bioPic} alt='bio-pic' className='bio-pic'></img>
       <div className='bio-container'>
         <div className='bio'>
-          <p>Hi, I'm Adam!</p>
+          <p className='bio-hi'><strong>Hi, I'm Adam!</strong></p>
           <p>When I was in fifth grade, my father came into the living room, newspaper in hand, and told me that the local community theatre was having auditions for a show called "Oliver".  He said I looked just like the kid in the movie (I did at the time) and told me I had to audition.</p>
           <p>My response..."No way!"  Sure I'd done the second-grade play, but being on stage was not something I really cared about.  But he said he really wanted me to try out and see how it goes.  Well, I did.  I sang a song a capella, had to do an improv scene, and then was asked to read through a scene and come back later in the day to have a callback.</p>
           <p>That was the moment something inside me snapped.  I suddenly reeeaaallly wanted that part.  I read, re-read, and rehearsed the scene with my brother over and over again right up until the moment I had to go back in.  I went in, nailed it, got the part, and was bitten by the bug.</p>

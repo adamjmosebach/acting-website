@@ -10,6 +10,7 @@ function Banner({ bannerNav }) {
         <div className='banner-nav'>
           <BannerNavLink name='Home' linkTo='/' />
           <BannerNavLink name='Bio' linkTo='/bio' />
+          <BannerNavLink name='Resume' linkTo='/resume' />
           <BannerNavLink name='Media' linkTo='media' /> 
         </div>
       </div>

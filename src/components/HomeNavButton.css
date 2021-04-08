@@ -1,6 +1,7 @@
 .home-nav-button-link {
   text-decoration: none;
   color: orange;
+  font-size: 1.5vw;
 }
 .home-nav-button {
   background: rgb(130, 114, 136);
