@@ -1,6 +1,7 @@
 .banner-nav-btn-link {
   text-decoration: none;
-  color: orange;
+  color: rgb(230, 180, 88);
+  /* text-shadow: 3px 3px #000000; */
   font-size: 3vw;
 }
 .banner-nav-btn {

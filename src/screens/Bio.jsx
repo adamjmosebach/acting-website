@@ -1,6 +1,7 @@
 import React from 'react'
 import './Bio.css'
 import bioPic from '../images/bioPic.jpg'
+import signature from '../images/signatureFirstName.png'
 
 function Bio({ updateBannerNav }) {
 
@@ -18,6 +19,8 @@ function Bio({ updateBannerNav }) {
           <p>Since then, I have made a career out of acting - having been in over 170 productions. I've performed in NYC, at Avery Fisher Hall, in many regional productions, have been in national and international tours, had roles on TV and the internet, and am an EMC and a member of SAG-AFTRA.</p>
           <p>And just to put all rumors to rest...</p>
           <p>It's true what you've heard...I eat almost exclusively pasta.  I'm ok with that.</p>
+          <p>Hope to see you soon,</p>
+          <img src={signature} alt='signature' className='signature'></img>
         </div>
       </div>
     </div>

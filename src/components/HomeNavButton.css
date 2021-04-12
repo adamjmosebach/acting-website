@@ -6,8 +6,10 @@
 .home-nav-button {
   background: rgb(130, 114, 136);
   /* background-color: rgb(172, 112, 2); */
-  border: 2px solid purple;
+  border: 2px solid rgb(78, 3, 78);
   box-shadow: -5px 5px 10px black;
+
+  text-shadow: 1px 1px #000000;
   border-radius: 5px;
   width: 20vw;
   height: 3vw;
