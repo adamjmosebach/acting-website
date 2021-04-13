@@ -12,6 +12,7 @@ function Home({ updateBannerNav }) {
       <div className='home-nav'>
         <HomeNavButton name='Bio' linkTo='/bio' />
         <HomeNavButton name='Resume' linkTo='/resume' />
+        <HomeNavButton name='Photos' linkTo='/photos' />
         <HomeNavButton name='Media' linkTo='/media' />
       </div>
       <div className='headshot-container'>

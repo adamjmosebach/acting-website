@@ -11,6 +11,7 @@ function Banner({ bannerNav }) {
           <BannerNavLink name='Home' linkTo='/' />
           <BannerNavLink name='Bio' linkTo='/bio' />
           <BannerNavLink name='Resume' linkTo='/resume' />
+          <BannerNavLink name='Photos' linkTo='/photos' />
           <BannerNavLink name='Media' linkTo='media' /> 
         </div>
       </div>
