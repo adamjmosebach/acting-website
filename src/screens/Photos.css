@@ -1,3 +1,17 @@
-.photos-div {
+.photo-album {
   color: white;
+}
+.photo-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.photo-album-photo {
+  margin: 2vw;
+}
+.vert {
+  height: 20vw;
+}
+.horiz {
+  width: 20vw;
 }
