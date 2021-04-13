@@ -1,27 +1,29 @@
 .home-nav-button-link {
   text-decoration: none;
-  color: orange;
+  color: rgb(230, 180, 88);
   font-size: 1.5vw;
 }
 .home-nav-button {
-  background: rgb(130, 114, 136);
+  background: rgb(82, 54, 92);
   /* background-color: rgb(172, 112, 2); */
-  border: 2px solid rgb(78, 3, 78);
+  border: 2px solid rgb(78, 5, 78);
   box-shadow: -5px 5px 10px black;
 
   text-shadow: 1px 1px #000000;
   border-radius: 5px;
-  width: 20vw;
-  height: 3vw;
-  line-height: 3vw;
+  width: 30vw;
+  height: 6vw;
+  line-height: 6vw;
   text-decoration: none;
   font-weight: 700;
   margin: 2vw;
+  font-size: 3vw;
   /* transition-timing-function: all linear; */
 }
 .home-nav-button:hover {
   box-shadow: -8px 8px 15px black;
-  transform: scale(1.15);
-  color: rgb(130, 114, 136);
-  background-color: orange;
+  transform: scale(1.125);
+  transition: linear;
+  color: rgb(82, 54, 92);
+  background-color: rgb(230, 180, 88);
 }

@@ -1,6 +1,15 @@
 .media-div {
-  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  /* flex-direction: row; */
+  /* width: 100vw; */
+  /* padding: 3vw 4vw; */
+  /* grid-template-columns: 40vw 40vw; */
+  margin-top: 3vw;
 }
 iframe {
-  width: 70vw;
+  width: 42vw;
+  height: 25vw;
+  margin: 2.75vw;
 }
