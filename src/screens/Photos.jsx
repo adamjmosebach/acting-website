@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Photos.css'
 import anne1 from '../images/anne1.jpeg'
 import anne2 from '../images/anne2.jpeg'
@@ -14,11 +14,26 @@ function Photos({ updateBannerNav }) {
 
   updateBannerNav(true);
 
+  const [currentPhoto, setCurrentPhoto] = useState('');
+  const [seePhoto, setSeePhoto] = useState('prod-photo-hidden');
+  // const [orientation, setOrientation] = useState('');
+
+  function focusPhoto(e) {
+    setCurrentPhoto(e.target.src);
+    setSeePhoto('prod-photo-visible');
+  }
+
+  function unfocusPhoto() {
+    setSeePhoto('prod-photo-hidden');
+  }
+
   return (
     <div className='photo-album'>
+      <div className={`focus-photo-modal ${seePhoto}`} onClick={unfocusPhoto}></div>
+      <img src={currentPhoto} className={`focused-photo ${seePhoto}`} alt='current production still'></img>
       <h4>Anne of Green Gables</h4>
       <div className='photo-section'>
-        <img src={anne1} className='prod-photo vert' alt='anne of green gables'></img>
+        <img src={anne1} className='prod-photo vert' alt='anne of green gables' onClick={focusPhoto}></img>
         <img src={anne2} className='prod-photo horiz' alt='anne of green gables'></img>
         <img src={anne3} className='prod-photo horiz' alt='anne of green gables'></img>
         <img src={anne4} className='prod-photo vert' alt='anne of green gables'></img>

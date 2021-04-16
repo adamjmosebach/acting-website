@@ -1,8 +1,8 @@
 .photo-album {
   color: white;
-}
-.photo-section {
+  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -14,4 +14,23 @@
 }
 .horiz {
   width: 20vw;
+}
+.focus-photo-modal {
+  width: 100vw;
+  height: 107.2vh;
+  background-color: white;
+  position: absolute;
+  opacity: 0.5;
+}
+.prod-photo-hidden {
+  visibility: hidden;
+}
+.prod-photo-visible {
+  visibility: visible;
+}
+.focused-photo {
+  position: absolute;
+  max-height: 80%;
+  max-width: 80%;
+  border: 1vw solid rgb(64, 3, 90);
 }
