@@ -15,7 +15,17 @@ function Photos({ updateBannerNav }) {
   updateBannerNav(true);
 
   const [annePhotos, setAnnPhotos] = useState([
-    [anne1, 'vert'], [anne2, 'horiz'], [anne3, 'horiz'], [anne4, 'vert']
+    [anne1, 'vert'],
+    [anne2, 'horiz'],
+    [anne3, 'horiz'],
+    [anne4, 'vert']
+  ]);
+
+  const [sssPhotos, setSSSPhotos] = useState([
+    [sss1, 'horiz'],
+    [sss2, 'horiz'],
+    [sss3, 'horiz'],
+    [sss4, 'horiz']
   ]);
   
   const [currentPhoto, setCurrentPhoto] = useState('');
@@ -42,10 +52,9 @@ function Photos({ updateBannerNav }) {
       </div>
       <h4>1776</h4>
       <div className='photo-section'>
-        <img src={sss1} className='prod-photo vert' alt='1776'></img>
-        <img src={sss2} className='prod-photo vert' alt='1776'></img>
-        <img src={sss3} className='prod-photo vert' alt='1776'></img>
-        <img src={sss4} className='prod-photo horiz' alt='1776'></img>
+        {sssPhotos.map(photo => (
+          <img src={photo[0]} className={`prod-photo ${photo[1]}`} alt='1776' onClick={focusPhoto}></img>
+        ))}
       </div>
     </div>
   )
