@@ -6,6 +6,10 @@
   justify-content: center;
   align-items: center;
 }
+.photo-section {
+  display: flex;
+  align-items: center;
+}
 .prod-photo {
   margin: 2vw;
 }

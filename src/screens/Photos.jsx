@@ -14,9 +14,12 @@ function Photos({ updateBannerNav }) {
 
   updateBannerNav(true);
 
+  const [annePhotos, setAnnPhotos] = useState([
+    [anne1, 'vert'], [anne2, 'horiz'], [anne3, 'horiz'], [anne4, 'vert']
+  ]);
+  
   const [currentPhoto, setCurrentPhoto] = useState('');
   const [seePhoto, setSeePhoto] = useState('prod-photo-hidden');
-  // const [orientation, setOrientation] = useState('');
 
   function focusPhoto(e) {
     setCurrentPhoto(e.target.src);
@@ -33,10 +36,9 @@ function Photos({ updateBannerNav }) {
       <img src={currentPhoto} className={`focused-photo ${seePhoto}`} alt='current production still'></img>
       <h4>Anne of Green Gables</h4>
       <div className='photo-section'>
-        <img src={anne1} className='prod-photo vert' alt='anne of green gables' onClick={focusPhoto}></img>
-        <img src={anne2} className='prod-photo horiz' alt='anne of green gables'></img>
-        <img src={anne3} className='prod-photo horiz' alt='anne of green gables'></img>
-        <img src={anne4} className='prod-photo vert' alt='anne of green gables'></img>
+        {annePhotos.map(photo => (
+          <img src={photo[0]} className={`prod-photo ${photo[1]}`} alt='anne of green gables' onClick={focusPhoto}></img>
+        ))}
       </div>
       <h4>1776</h4>
       <div className='photo-section'>
