@@ -21,7 +21,7 @@
 }
 .focus-photo-modal {
   width: 100vw;
-  height: 107.2vh;
+  height: 200%;
   background-color: white;
   position: absolute;
   opacity: 0.5;
@@ -33,10 +33,10 @@
 .prod-photo-visible {
   visibility: visible;
 }
-.focused-photo-and-arrows {
+/* .focused-photo-and-arrows {
   position: absolute;
   display: flex;
-}
+} */
 .focused-photo {
   position: absolute;
   max-height: 80%;
