@@ -28,11 +28,11 @@ function Photos({ updateBannerNav }) {
     [sss4, 'horiz']
   ]);
   
-  const [currentPhoto, setCurrentPhoto] = useState('');
+  const [currentPhoto, setCurrentPhoto] = useState([]);
   const [seePhoto, setSeePhoto] = useState('prod-photo-hidden');
 
   function focusPhoto(e) {
-    setCurrentPhoto(e.target.src);
+    setCurrentPhoto([e.target.src, e.target.name]);
     setSeePhoto('prod-photo-visible');
   }
 
@@ -41,28 +41,31 @@ function Photos({ updateBannerNav }) {
   }
 
   function nextPhoto(e) {
-
+    if (currentPhoto[1] === 'annePhotos') {
+      console.log(annePhotos[0][0])
+      console.log(currentPhoto[0])
+      // console.log(annePhotos.indexOf(photo => photo[0] === currentPhoto[0]))
+    } else {
+      console.log('not anne')
+    }
   }
  
   return (
     <div className='photo-album'>
-      <div className={`focus-photo-modal ${seePhoto}`} onClick={unfocusPhoto}>
-      </div>
-      {/* <div className='focused-photo-and-arrows'> */}
-        <img src={currentPhoto} className={`focused-photo ${seePhoto}`} alt='current production still'></img>
-        <div className={`arrow arrow-left ${seePhoto}`}>Previous</div>
-        <div className={`arrow arrow-right ${seePhoto}`}>Next</div>
-      {/* </div> */}
+      <div className={`focus-photo-modal ${seePhoto}`} onClick={unfocusPhoto}></div>
+      <img src={currentPhoto[0]} className={`focused-photo ${seePhoto}`} alt='current production still'></img>
+      <div className={`arrow arrow-left ${seePhoto}`} onClick={nextPhoto}>Previous</div>
+      <div className={`arrow arrow-right ${seePhoto}`} onClick={nextPhoto}>Next</div>
       <h4>Anne of Green Gables</h4>
       <div className='photo-section'>
         {annePhotos.map(photo => (
-          <img src={photo[0]} className={`prod-photo ${photo[1]}`} alt='anne of green gables' onClick={focusPhoto}></img>
+          <img src={photo[0]} className={`prod-photo ${photo[1]}`} alt='anne of green gables' onClick={focusPhoto} name='annePhotos'></img>
         ))}
       </div>
       <h4>1776</h4>
       <div className='photo-section'>
         {sssPhotos.map(photo => (
-          <img src={photo[0]} className={`prod-photo ${photo[1]}`} alt='1776' onClick={focusPhoto}></img>
+          <img src={photo[0]} className={`prod-photo ${photo[1]}`} alt='1776' onClick={focusPhoto} name='sssPhotos'></img>
         ))}
       </div>
     </div>
