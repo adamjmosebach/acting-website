@@ -25,6 +25,7 @@
   background-color: white;
   position: absolute;
   opacity: 0.5;
+  display: flex;
 }
 .prod-photo-hidden {
   visibility: hidden;
@@ -32,9 +33,30 @@
 .prod-photo-visible {
   visibility: visible;
 }
+.focused-photo-and-arrows {
+  position: absolute;
+  display: flex;
+}
 .focused-photo {
   position: absolute;
   max-height: 80%;
   max-width: 80%;
+  min-height: 40%;
+  min-width: 40%;
   border: 1vw solid rgb(64, 3, 90);
+}
+.arrow {
+  position: absolute;
+  text-align: center;
+  justify-content: right;
+  color: white;
+  background-color: rgb(64, 3, 90);
+  width: 8vw;
+  padding: 1vw;
+}
+.arrow-left {
+  left: 0;
+}
+.arrow-right {
+  right: 0;
 }

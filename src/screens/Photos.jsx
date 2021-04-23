@@ -40,10 +40,19 @@ function Photos({ updateBannerNav }) {
     setSeePhoto('prod-photo-hidden');
   }
 
+  function nextPhoto(e) {
+
+  }
+ 
   return (
     <div className='photo-album'>
-      <div className={`focus-photo-modal ${seePhoto}`} onClick={unfocusPhoto}></div>
-      <img src={currentPhoto} className={`focused-photo ${seePhoto}`} alt='current production still'></img>
+      <div className={`focus-photo-modal ${seePhoto}`} onClick={unfocusPhoto}>
+      </div>
+      {/* <div className='focused-photo-and-arrows'> */}
+        <img src={currentPhoto} className={`focused-photo ${seePhoto}`} alt='current production still'></img>
+        <div className={`arrow arrow-left ${seePhoto}`}>Previous</div>
+        <div className={`arrow arrow-right ${seePhoto}`}>Next</div>
+      {/* </div> */}
       <h4>Anne of Green Gables</h4>
       <div className='photo-section'>
         {annePhotos.map(photo => (
