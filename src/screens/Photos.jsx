@@ -26,47 +26,25 @@ function Photos({ updateBannerNav }) {
     { src: sss3, id: 'sss3', orientation: 'horiz' },
     { src: sss4, id: 'sss4', orientation: 'horiz' },
   ]);
-
-  // photoArr.slice(0, 4).forEach(photo => {
-  //   setAnnePhotos(...annePhotos, <img src={photo.src} alt='anne'></img>)
-  // })
-
-  // photoArr.slice(0, 4).forEach(photo => (
-  //   setAnnePhotos(...annePhotos, <img src={photo.src} alt='anne' />)
-  // ))
-
-  // const [sssPhotos, setSSSPhotos] = useState([
-  //   [sss1, 'horiz'],
-  //   [sss2, 'horiz'],
-  //   [sss3, 'horiz'],
-  //   [sss4, 'horiz']
-  // ]);
   
-  const [currentPhoto, setCurrentPhoto] = useState([]);
   const [seePhoto, setSeePhoto] = useState('prod-photo-hidden');
 
   function focusPhoto(e) {
-    // await setCurrentPhoto({ src: e.target.src, id: e.target.id });
     setSeePhoto('prod-photo-visible');
     let idx = photoArr.findIndex(photo => photo.id === e.target.id);
     setFocusIndex(idx);
-    // console.log(idx)
   }
 
   function unfocusPhoto() {
     setSeePhoto('prod-photo-hidden');
   }
 
-  function nextPhoto(e) {
-    // console.log(currentPhoto)
-    // if (currentPhoto.name === 'annePhotos') {
+  function prevPhoto() {
+    setFocusIndex(focusIndex - 1);
+  }
 
-      // let idx = photoArr.findIndex(photo => photo.id === currentPhoto.id);
-      // console.log(idx);
-
-    // } else {
-    //   console.log('not anne')
-    // }
+  function nextPhoto() {
+    setFocusIndex(focusIndex + 1);
   }
  
   return (
@@ -74,28 +52,21 @@ function Photos({ updateBannerNav }) {
       <div className={`focus-photo-modal ${seePhoto}`} onClick={unfocusPhoto}></div>
       
       {/* Focous Photo */}
-      {/* <img src={currentPhoto.src} className={`focused-photo ${seePhoto}`} alt='current production still'></img> */}
       <img src={photoArr[focusIndex].src} className={`focused-photo ${seePhoto}`} alt='current production still'></img>
 
-      <div className={`arrow arrow-left ${seePhoto}`} onClick={nextPhoto}>Previous</div>
+      <div className={`arrow arrow-left ${seePhoto}`} onClick={prevPhoto}>Previous</div>
       <div className={`arrow arrow-right ${seePhoto}`} onClick={nextPhoto}>Next</div>
       <h4>Anne of Green Gables</h4>
       <div className='photo-section'>
         {photoArr.slice(0, 4).map(photo => (
           <img src={photo.src} id={photo.id} className={`prod-photo ${photo.orientation}`} alt='anne of green gables' onClick={focusPhoto}></img>
         ))}
-        {/* {annePhotos.map(photo => (
-          <img src={photo.src} id={photo.id} className={`prod-photo ${photo.orientation}`} alt='anne of green gables' onClick={focusPhoto} name='annePhotos'></img>
-        ))} */}
       </div>
       <h4>1776</h4>
       <div className='photo-section'>
         {photoArr.slice(4, 8).map(photo => (
           <img src={photo.src} id={photo.id} className={`prod-photo ${photo.orientation}`} alt='1776' onClick={focusPhoto}></img>
         ))}
-        {/* {sssPhotos.map(photo => (
-          <img src={photo[0]} className={`prod-photo ${photo[1]}`} alt='1776' onClick={focusPhoto} name='sssPhotos'></img>
-        ))} */}
       </div>
     </div>
   )
