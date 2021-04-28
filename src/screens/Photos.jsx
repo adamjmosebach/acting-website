@@ -29,6 +29,9 @@ function Photos({ updateBannerNav }) {
   
   const [seePhoto, setSeePhoto] = useState('prod-photo-hidden');
 
+  const [prevDisable, setPrevDisable] = useState(false);
+  const [nextDisable, setNextDisable] = useState(false);
+
   function focusPhoto(e) {
     setSeePhoto('prod-photo-visible');
     let idx = photoArr.findIndex(photo => photo.id === e.target.id);
@@ -40,22 +43,35 @@ function Photos({ updateBannerNav }) {
   }
 
   function prevPhoto() {
+    setNextDisable(false);
+    if (focusIndex - 1 === 0) {
+      setPrevDisable(true);
+    }
     setFocusIndex(focusIndex - 1);
   }
 
   function nextPhoto() {
+    setPrevDisable(false);
+    if (focusIndex + 1 >= photoArr.length - 1) {
+      setNextDisable(true);
+    }
     setFocusIndex(focusIndex + 1);
   }
  
   return (
     <div className='photo-album'>
+
+      {/* Modal */}
       <div className={`focus-photo-modal ${seePhoto}`} onClick={unfocusPhoto}></div>
       
-      {/* Focous Photo */}
+      {/* Focus Photo */}
       <img src={photoArr[focusIndex].src} className={`focused-photo ${seePhoto}`} alt='current production still'></img>
 
-      <div className={`arrow arrow-left ${seePhoto}`} onClick={prevPhoto}>Previous</div>
-      <div className={`arrow arrow-right ${seePhoto}`} onClick={nextPhoto}>Next</div>
+      {/* Arrows */}
+      <button className={`arrow arrow-left ${seePhoto}`} onClick={prevPhoto} disabled={prevDisable} >Previous</button>
+      <button className={`arrow arrow-right ${seePhoto}`} onClick={nextPhoto} disabled={nextDisable}>Next</button>
+      
+      {/* Pictures */}
       <h4>Anne of Green Gables</h4>
       <div className='photo-section'>
         {photoArr.slice(0, 4).map(photo => (
