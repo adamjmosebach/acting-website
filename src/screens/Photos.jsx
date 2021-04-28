@@ -15,10 +15,10 @@ function Photos({ updateBannerNav }) {
   updateBannerNav(true);
 
   const [annePhotos, setAnnPhotos] = useState([
-    [anne1, 'vert'],
-    [anne2, 'horiz'],
-    [anne3, 'horiz'],
-    [anne4, 'vert']
+    { src: anne1, id: 'anne1', orientation: 'vert' },
+    { src: anne2, id: 'anne2', orientation: 'horiz' },
+    { src: anne3, id: 'anne3', orientation: 'horiz' },
+    { src: anne4, id: 'anne4', orientation: 'vert' }
   ]);
 
   const [sssPhotos, setSSSPhotos] = useState([
@@ -32,7 +32,7 @@ function Photos({ updateBannerNav }) {
   const [seePhoto, setSeePhoto] = useState('prod-photo-hidden');
 
   function focusPhoto(e) {
-    setCurrentPhoto([e.target.src, e.target.name]);
+    setCurrentPhoto({ src: e.target.src, name: e.target.name, id: e.target.id });
     setSeePhoto('prod-photo-visible');
   }
 
@@ -41,10 +41,22 @@ function Photos({ updateBannerNav }) {
   }
 
   function nextPhoto(e) {
-    if (currentPhoto[1] === 'annePhotos') {
-      console.log(annePhotos[0][0])
-      console.log(currentPhoto[0])
-      // console.log(annePhotos.indexOf(photo => photo[0] === currentPhoto[0]))
+    if (currentPhoto.name === 'annePhotos') {
+      // console.log('anne photo')
+      // console.log(annePhotos[0].id)
+      // console.log(currentPhoto.id)
+      // console.log(currentPhoto)
+      let idx = annePhotos.findIndex(photo => photo.id === currentPhoto.id)
+      console.log(idx)
+      
+      // annePhotos.forEach(photo => console.log(photo.id))
+      // console.log('annePhotos[1].id = ',annePhotos[1].id)
+      // console.log(`currentPhoto.id = `, currentPhoto.id)
+      // if (annePhotos[1].id === currentPhoto.id) {
+      //   console.log('match')
+      // } else {
+      //   console.log('no match')
+      // }
     } else {
       console.log('not anne')
     }
@@ -53,13 +65,13 @@ function Photos({ updateBannerNav }) {
   return (
     <div className='photo-album'>
       <div className={`focus-photo-modal ${seePhoto}`} onClick={unfocusPhoto}></div>
-      <img src={currentPhoto[0]} className={`focused-photo ${seePhoto}`} alt='current production still'></img>
+      <img src={currentPhoto.src} className={`focused-photo ${seePhoto}`} alt='current production still'></img>
       <div className={`arrow arrow-left ${seePhoto}`} onClick={nextPhoto}>Previous</div>
       <div className={`arrow arrow-right ${seePhoto}`} onClick={nextPhoto}>Next</div>
       <h4>Anne of Green Gables</h4>
       <div className='photo-section'>
         {annePhotos.map(photo => (
-          <img src={photo[0]} className={`prod-photo ${photo[1]}`} alt='anne of green gables' onClick={focusPhoto} name='annePhotos'></img>
+          <img src={photo.src} id={photo.id} className={`prod-photo ${photo.orientation}`} alt='anne of green gables' onClick={focusPhoto} name='annePhotos'></img>
         ))}
       </div>
       <h4>1776</h4>
