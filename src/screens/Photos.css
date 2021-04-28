@@ -54,6 +54,9 @@
   width: 8vw;
   padding: 1vw;
 }
+.arrow:disabled {
+  background-color: grey;
+}
 .arrow-left {
   left: 0;
 }
