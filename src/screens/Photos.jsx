@@ -14,26 +14,43 @@ function Photos({ updateBannerNav }) {
 
   updateBannerNav(true);
 
-  const [annePhotos, setAnnPhotos] = useState([
+  const [focusIndex, setFocusIndex] = useState(0)
+
+  const [photoArr, setPhotoArr] = useState([
     { src: anne1, id: 'anne1', orientation: 'vert' },
     { src: anne2, id: 'anne2', orientation: 'horiz' },
     { src: anne3, id: 'anne3', orientation: 'horiz' },
-    { src: anne4, id: 'anne4', orientation: 'vert' }
+    { src: anne4, id: 'anne4', orientation: 'vert' },
+    { src: sss1, id: 'sss1', orientation: 'horiz' },
+    { src: sss2, id: 'sss2', orientation: 'horiz' },
+    { src: sss3, id: 'sss3', orientation: 'horiz' },
+    { src: sss4, id: 'sss4', orientation: 'horiz' },
   ]);
 
-  const [sssPhotos, setSSSPhotos] = useState([
-    [sss1, 'horiz'],
-    [sss2, 'horiz'],
-    [sss3, 'horiz'],
-    [sss4, 'horiz']
-  ]);
+  // photoArr.slice(0, 4).forEach(photo => {
+  //   setAnnePhotos(...annePhotos, <img src={photo.src} alt='anne'></img>)
+  // })
+
+  // photoArr.slice(0, 4).forEach(photo => (
+  //   setAnnePhotos(...annePhotos, <img src={photo.src} alt='anne' />)
+  // ))
+
+  // const [sssPhotos, setSSSPhotos] = useState([
+  //   [sss1, 'horiz'],
+  //   [sss2, 'horiz'],
+  //   [sss3, 'horiz'],
+  //   [sss4, 'horiz']
+  // ]);
   
   const [currentPhoto, setCurrentPhoto] = useState([]);
   const [seePhoto, setSeePhoto] = useState('prod-photo-hidden');
 
   function focusPhoto(e) {
-    setCurrentPhoto({ src: e.target.src, name: e.target.name, id: e.target.id });
+    // await setCurrentPhoto({ src: e.target.src, id: e.target.id });
     setSeePhoto('prod-photo-visible');
+    let idx = photoArr.findIndex(photo => photo.id === e.target.id);
+    setFocusIndex(idx);
+    // console.log(idx)
   }
 
   function unfocusPhoto() {
@@ -41,44 +58,44 @@ function Photos({ updateBannerNav }) {
   }
 
   function nextPhoto(e) {
-    if (currentPhoto.name === 'annePhotos') {
-      // console.log('anne photo')
-      // console.log(annePhotos[0].id)
-      // console.log(currentPhoto.id)
-      // console.log(currentPhoto)
-      let idx = annePhotos.findIndex(photo => photo.id === currentPhoto.id)
-      console.log(idx)
-      
-      // annePhotos.forEach(photo => console.log(photo.id))
-      // console.log('annePhotos[1].id = ',annePhotos[1].id)
-      // console.log(`currentPhoto.id = `, currentPhoto.id)
-      // if (annePhotos[1].id === currentPhoto.id) {
-      //   console.log('match')
-      // } else {
-      //   console.log('no match')
-      // }
-    } else {
-      console.log('not anne')
-    }
+    // console.log(currentPhoto)
+    // if (currentPhoto.name === 'annePhotos') {
+
+      // let idx = photoArr.findIndex(photo => photo.id === currentPhoto.id);
+      // console.log(idx);
+
+    // } else {
+    //   console.log('not anne')
+    // }
   }
  
   return (
     <div className='photo-album'>
       <div className={`focus-photo-modal ${seePhoto}`} onClick={unfocusPhoto}></div>
-      <img src={currentPhoto.src} className={`focused-photo ${seePhoto}`} alt='current production still'></img>
+      
+      {/* Focous Photo */}
+      {/* <img src={currentPhoto.src} className={`focused-photo ${seePhoto}`} alt='current production still'></img> */}
+      <img src={photoArr[focusIndex].src} className={`focused-photo ${seePhoto}`} alt='current production still'></img>
+
       <div className={`arrow arrow-left ${seePhoto}`} onClick={nextPhoto}>Previous</div>
       <div className={`arrow arrow-right ${seePhoto}`} onClick={nextPhoto}>Next</div>
       <h4>Anne of Green Gables</h4>
       <div className='photo-section'>
-        {annePhotos.map(photo => (
-          <img src={photo.src} id={photo.id} className={`prod-photo ${photo.orientation}`} alt='anne of green gables' onClick={focusPhoto} name='annePhotos'></img>
+        {photoArr.slice(0, 4).map(photo => (
+          <img src={photo.src} id={photo.id} className={`prod-photo ${photo.orientation}`} alt='anne of green gables' onClick={focusPhoto}></img>
         ))}
+        {/* {annePhotos.map(photo => (
+          <img src={photo.src} id={photo.id} className={`prod-photo ${photo.orientation}`} alt='anne of green gables' onClick={focusPhoto} name='annePhotos'></img>
+        ))} */}
       </div>
       <h4>1776</h4>
       <div className='photo-section'>
-        {sssPhotos.map(photo => (
-          <img src={photo[0]} className={`prod-photo ${photo[1]}`} alt='1776' onClick={focusPhoto} name='sssPhotos'></img>
+        {photoArr.slice(4, 8).map(photo => (
+          <img src={photo.src} id={photo.id} className={`prod-photo ${photo.orientation}`} alt='1776' onClick={focusPhoto}></img>
         ))}
+        {/* {sssPhotos.map(photo => (
+          <img src={photo[0]} className={`prod-photo ${photo[1]}`} alt='1776' onClick={focusPhoto} name='sssPhotos'></img>
+        ))} */}
       </div>
     </div>
   )
