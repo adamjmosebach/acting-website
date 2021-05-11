@@ -8,8 +8,8 @@
 .headshot-container {
   /* height: 85vh; */
   display: flex;
-  align-items: center;
+  /* height: ; */
 }
-.home-nav {
-  /* transition: all 2s; */
+.headshot {
+  height: 45vh;
 }
