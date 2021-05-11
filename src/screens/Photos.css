@@ -5,6 +5,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 2vw;
 }
 .photo-section {
   display: flex;
@@ -21,7 +22,7 @@
 }
 .focus-photo-modal {
   width: 100vw;
-  height: 200%;
+  height: 100%;
   background-color: white;
   position: absolute;
   opacity: 0.5;
