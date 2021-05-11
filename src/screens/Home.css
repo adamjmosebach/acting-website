@@ -3,12 +3,13 @@
   justify-content: space-evenly;
   align-items: center;
   color: white;
+  height: 85vh;
 }
 .headshot-container {
-  height: 85vh;
+  /* height: 85vh; */
   display: flex;
   align-items: center;
 }
 .home-nav {
-  /* transition: linear; */
+  /* transition: all 2s; */
 }
