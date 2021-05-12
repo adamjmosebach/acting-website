@@ -3,9 +3,10 @@ import './Bio.css'
 import bioPic from '../images/bioPic.jpg'
 import signature from '../images/signatureFirstName.png'
 
-function Bio({ updateBannerNav }) {
+function Bio({ updateBannerNav, setCurrentPage }) {
 
-  updateBannerNav(true)
+  updateBannerNav(true);
+  setCurrentPage('Bio');
 
   return (
     <div className='bio-div'>

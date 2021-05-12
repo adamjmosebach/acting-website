@@ -20,3 +20,8 @@
     opacity: 100%;
   }
 }
+
+.highlight {
+  /* text-shadow: 5px 5px 5px orange; */
+  color: rgb(252, 228, 178);
+}
