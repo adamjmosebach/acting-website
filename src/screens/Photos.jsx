@@ -34,21 +34,19 @@ function Photos({ updateBannerNav, setCurrentPage }) {
   const [nextDisable, setNextDisable] = useState(false);
 
   function focusPhoto(e) {
-    setSeePhoto('prod-photo-visible');
     let idx = photoArr.findIndex(photo => photo.id === e.target.id);
+    setFocusIndex(idx);
     if (idx === 0) {
       setPrevDisable(true);
       setNextDisable(false);
-    }
-    if (idx === photoArr.length - 1) {
+    } else if (idx === photoArr.length - 1) {
       setPrevDisable(false);
       setNextDisable(true);
-    }
-    if (idx > 0 && idx < photoArr.length - 1) {
+    } else {
       setPrevDisable(false);
       setNextDisable(false);
     }
-    setFocusIndex(idx);
+    setTimeout(() => setSeePhoto('prod-photo-visible'), 50);
   }
 
   function unfocusPhoto() {
