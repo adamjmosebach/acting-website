@@ -17,7 +17,7 @@ function Photos({ updateBannerNav, setCurrentPage }) {
 
   const [focusIndex, setFocusIndex] = useState(0)
 
-  const [photoArr, setPhotoArr] = useState([
+  const photoArr = [
     { src: anne1, id: 'anne1', orientation: 'vert' },
     { src: anne2, id: 'anne2', orientation: 'horiz' },
     { src: anne3, id: 'anne3', orientation: 'horiz' },
@@ -26,7 +26,7 @@ function Photos({ updateBannerNav, setCurrentPage }) {
     { src: sss2, id: 'sss2', orientation: 'horiz' },
     { src: sss3, id: 'sss3', orientation: 'horiz' },
     { src: sss4, id: 'sss4', orientation: 'horiz' },
-  ]);
+  ];
   
   const [seePhoto, setSeePhoto] = useState('prod-photo-hidden');
 
@@ -36,6 +36,18 @@ function Photos({ updateBannerNav, setCurrentPage }) {
   function focusPhoto(e) {
     setSeePhoto('prod-photo-visible');
     let idx = photoArr.findIndex(photo => photo.id === e.target.id);
+    if (idx === 0) {
+      setPrevDisable(true);
+      setNextDisable(false);
+    }
+    if (idx === photoArr.length - 1) {
+      setPrevDisable(false);
+      setNextDisable(true);
+    }
+    if (idx > 0 && idx < photoArr.length - 1) {
+      setPrevDisable(false);
+      setNextDisable(false);
+    }
     setFocusIndex(idx);
   }
 
