@@ -5,7 +5,12 @@ html {
   text-align: center;
   /* height: 100vh; */
   /* background-repeat: no-repeat; */
+  /* background-size: 100% auto; */
+  /* background-size: auto 100%; */
+  /* margin-top: 23vw; */
+  /* background-size: 100% cover; */
   background-attachment: fixed;
+  height: 100vh;
 }
 /* 
 .App-logo {
