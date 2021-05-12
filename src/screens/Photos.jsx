@@ -10,9 +10,10 @@ import sss3 from '../images/1776-3.jpeg'
 import sss4 from '../images/1776-4.jpeg'
 
 
-function Photos({ updateBannerNav }) {
+function Photos({ updateBannerNav, setCurrentPage }) {
 
   updateBannerNav(true);
+  setCurrentPage('Photos');
 
   const [focusIndex, setFocusIndex] = useState(0)
 

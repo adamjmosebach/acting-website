@@ -12,25 +12,26 @@ import Photos from './screens/Photos'
 function App() {
 
   const [bannerNav, updateBannerNav] = useState()
+  const [currentPage, setCurrentPage] = useState('');
 
   return (
     <div className='App' style={{ backgroundImage: `url(${greyWood})` }}>
-      <Banner bannerNav={bannerNav} />
+      <Banner bannerNav={bannerNav} currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <Switch>
         <Route exact path='/'>
           <Home updateBannerNav={updateBannerNav} />
         </Route>
         <Route path='/media'>
-          <Media updateBannerNav={updateBannerNav} />
+          <Media updateBannerNav={updateBannerNav} setCurrentPage={setCurrentPage} />
         </Route>
         <Route path='/bio'>
-          <Bio updateBannerNav={updateBannerNav} />
+          <Bio updateBannerNav={updateBannerNav} setCurrentPage={setCurrentPage} />
         </Route>
         <Route path='/resume'>
-          <Resume updateBannerNav={updateBannerNav} />
+          <Resume updateBannerNav={updateBannerNav} setCurrentPage={setCurrentPage} />
         </Route> 
         <Route path='/photos'>
-          <Photos updateBannerNav={updateBannerNav} />
+          <Photos updateBannerNav={updateBannerNav} setCurrentPage={setCurrentPage} />
         </Route>
       </Switch>
     </div>

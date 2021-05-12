@@ -1,9 +1,10 @@
 import React from 'react'
 import './Media.css'
 
-function Media({ updateBannerNav }) {
+function Media({ updateBannerNav, setCurrentPage }) {
 
   updateBannerNav(true);
+  setCurrentPage('Media');
 
   return (
     <div className='media-div'>

@@ -2,17 +2,19 @@ import React from 'react'
 import './Banner.css'
 import BannerNavLink from './components/BannerNavLink'
 
-function Banner({ bannerNav }) {
+function Banner({ bannerNav, currentPage, setCurrentPage }) {
+
+
   if (bannerNav) {
     return (
       <div className='banner'>
         <h1 className='banner-name'>Adam Mosebach</h1>
         <div className='banner-nav'>
-          <BannerNavLink name='Home' linkTo='/' />
-          <BannerNavLink name='Bio' linkTo='/bio' />
-          <BannerNavLink name='Resume' linkTo='/resume' />
-          <BannerNavLink name='Photos' linkTo='/photos' />
-          <BannerNavLink name='Media' linkTo='media' /> 
+          <BannerNavLink name='Home' linkTo='/' currentPage={currentPage} setCurrentPage={setCurrentPage} />
+          <BannerNavLink name='Bio' linkTo='/bio' currentPage={currentPage} setCurrentPage={setCurrentPage} />
+          <BannerNavLink name='Resume' linkTo='/resume' currentPage={currentPage} setCurrentPage={setCurrentPage} />
+          <BannerNavLink name='Photos' linkTo='/photos' currentPage={currentPage} setCurrentPage={setCurrentPage} />
+          <BannerNavLink name='Media' linkTo='media' currentPage={currentPage} setCurrentPage={setCurrentPage} /> 
         </div>
       </div>
     )
