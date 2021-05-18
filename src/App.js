@@ -8,6 +8,7 @@ import Media from './screens/Media'
 import Bio from './screens/Bio'
 import Resume from './screens/Resume'
 import Photos from './screens/Photos'
+import Contact from './screens/Contact'
 
 function App() {
 
@@ -32,6 +33,9 @@ function App() {
         </Route> 
         <Route path='/photos'>
           <Photos updateBannerNav={updateBannerNav} setCurrentPage={setCurrentPage} />
+        </Route>
+        <Route path='/contact'>
+          <Contact updateBannerNav={updateBannerNav} setCurrentPage={setCurrentPage} />
         </Route>
       </Switch>
     </div>

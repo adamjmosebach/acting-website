@@ -14,6 +14,7 @@ function Home({ updateBannerNav }) {
         <HomeNavButton name='Resume' linkTo='/resume' />
         <HomeNavButton name='Photos' linkTo='/photos' />
         <HomeNavButton name='Media' linkTo='/media' />
+        <HomeNavButton name='Contact' linkTo='/contact' />
       </div>
       <div className='headshot-container'>
         <img src={headshot} alt='headshot' className='headshot'></img>
