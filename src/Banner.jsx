@@ -14,7 +14,8 @@ function Banner({ bannerNav, currentPage, setCurrentPage }) {
           <BannerNavLink name='Bio' linkTo='/bio' currentPage={currentPage} setCurrentPage={setCurrentPage} />
           <BannerNavLink name='Resume' linkTo='/resume' currentPage={currentPage} setCurrentPage={setCurrentPage} />
           <BannerNavLink name='Photos' linkTo='/photos' currentPage={currentPage} setCurrentPage={setCurrentPage} />
-          <BannerNavLink name='Media' linkTo='media' currentPage={currentPage} setCurrentPage={setCurrentPage} /> 
+          <BannerNavLink name='Media' linkTo='/media' currentPage={currentPage} setCurrentPage={setCurrentPage} />
+          <BannerNavLink name='Contact' linkTo='/contact' currentPage={currentPage} setCurrentPage={setCurrentPage} /> 
         </div>
       </div>
     )
