@@ -20,6 +20,7 @@
   font-size: 3.25vh;
   /* transition-timing-function: all linear; */
   transition: all 0.5s;
+  font-family: 'Great Vibes';
 }
 .home-nav-button:hover {
   box-shadow: -8px 18px 15px black;
