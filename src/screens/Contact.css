@@ -1,6 +1,5 @@
 .contact-div {
   color: white;
-  margin-top: 8vh;
 }
 .contact-title {
   /* color: rgb(227, 182, 100); */
@@ -8,9 +7,10 @@
   /* font-family: 'Pinyon Script', cursive; */
   font-family: cursive;
   font-style: italic;
-  font-size: 5.75vw;
-  letter-spacing: 3.5px;
+  font-size: 6.5vh;
+  letter-spacing: 4px;
   text-shadow: 1px 1px 5px #555;
+  margin: 3vh;
 }
 .contact-form {
   display: flex;
@@ -33,7 +33,7 @@
   /* font-family: 'Great Vibes'; */
   font-family: cursive;
   font-style: italic;
-  font-size: 3vw;
+  font-size: 3vh;
   letter-spacing: 2px;
 }
 .contact-input {
@@ -63,7 +63,7 @@
   line-height: 6vh;
   text-decoration: none;
   font-weight: 700;
-  margin: 5.5vh;
+  margin: 5vh;
   font-size: 3.25vh;
   /* transition-timing-function: all linear; */
   transition: all 0.5s;
@@ -81,7 +81,7 @@
   color: rgb(230, 180, 88);
   font-family: cursive;
   font-style: italic;
-  font-size: 4vw;
+  font-size: 4vh;
   letter-spacing: 3.5px;
   text-shadow: 1px 1px 5px #555;
 }
