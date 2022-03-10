@@ -1,3 +1,87 @@
 .contact-div {
   color: white;
+  margin-top: 8vh;
+}
+.contact-title {
+  /* color: rgb(227, 182, 100); */
+  color: rgb(230, 180, 88);
+  /* font-family: 'Pinyon Script', cursive; */
+  font-family: cursive;
+  font-style: italic;
+  font-size: 5.75vw;
+  letter-spacing: 3.5px;
+  text-shadow: 1px 1px 5px #555;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgb(223, 180, 100);
+}
+.contact-label-and-input {
+  display: flex;
+}
+.contact-label,
+.contact-input {
+  margin: 2vw;
+  height: 3vh;
+}
+.contact-label {
+  width: 10vw;
+  text-align: right;
+  line-height: 4vh;
+  /* font-family: 'Great Vibes'; */
+  font-family: cursive;
+  font-style: italic;
+  font-size: 3vw;
+  letter-spacing: 2px;
+}
+.contact-input {
+  width: 30vw;
+  background-color: rgb(189, 188, 188);
+  box-shadow: 1px 1px 5px #555 inset;
+}
+.contact-message {
+  margin: 2vw;
+  width: 30vw;
+  height: 10vw;
+  background-color: rgb(189, 188, 188);
+  box-shadow: 1px 1px 5px #555 inset;
+}
+.contact-submit-btn {
+  background: rgb(82, 54, 92);
+  color: rgb(230, 180, 88);
+  /* background-color: rgb(172, 112, 2); */
+  border: 2px solid rgb(78, 5, 78);
+  box-shadow: -5px 5px 10px black;
+  font-family: cursive;
+  text-shadow: 1px 1px #000000;
+  border-radius: 7px;
+  width: 15vw;
+  min-width: 120px;
+  height: 6vh;
+  line-height: 6vh;
+  text-decoration: none;
+  font-weight: 700;
+  margin: 5.5vh;
+  font-size: 3.25vh;
+  /* transition-timing-function: all linear; */
+  transition: all 0.5s;
+  font-family: 'Great Vibes';
+}
+.contact-submit-btn:hover {
+  box-shadow: -8px 18px 15px black;
+  transform: scale(1.075);
+  transition: all 0.5s linear;
+  color: rgb(82, 54, 92);
+  background-color: rgb(230, 180, 88);
+}
+.contact-reply {
+  margin-top: 15vh;
+  color: rgb(230, 180, 88);
+  font-family: cursive;
+  font-style: italic;
+  font-size: 4vw;
+  letter-spacing: 3.5px;
+  text-shadow: 1px 1px 5px #555;
 }

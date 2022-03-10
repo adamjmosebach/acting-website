@@ -10,7 +10,7 @@ html {
   /* margin-top: 23vw; */
   /* background-size: 100% cover; */
   background-attachment: fixed;
-  height: 100vh;
+  min-height: 100vh;
 }
 /* 
 .App-logo {
