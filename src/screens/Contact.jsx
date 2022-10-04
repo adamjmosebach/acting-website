@@ -4,8 +4,8 @@ import emailjs from 'emailjs-com';
 
 function Contact({ updateBannerNav, setCurrentPage }) {
   const [name, updateName] = useState('');
-  const [email, updateEmail] = useState('');
-  const [message, updateMessage] = useState('');
+  // const [email, updateEmail] = useState('');
+  // const [message, updateMessage] = useState('');
   const [reply, setReply] = useState(false);
 
   useEffect(() => {
@@ -16,12 +16,13 @@ function Contact({ updateBannerNav, setCurrentPage }) {
 
   function handleSubmit(e) {
     e.preventDefault();
+    // info found at https://dashboard.emailjs.com/admin
     emailjs
       .sendForm(
-        'service_8ybfrzs',
-        'template_y4mhevf',
-        e.target,
-        'txKw-cNrodteK2L5h'
+        'service_8ybfrzs', // serviceID
+        'template_y4mhevf', // templateID
+        e.target, // form
+        'txKw-cNrodteK2L5h' // publicKey
       )
       .then(
         (result) => {
@@ -69,7 +70,7 @@ function Contact({ updateBannerNav, setCurrentPage }) {
             name='contact-email'
             className='contact-input'
             type='email'
-            onChange={(e) => updateEmail(e.target.value)}
+            // onChange={(e) => updateEmail(e.target.value)}
           />
         </div>
         <div className='contact-label-and-input'>
@@ -80,7 +81,7 @@ function Contact({ updateBannerNav, setCurrentPage }) {
             id='contact-message'
             name='contact-message'
             className='contact-message'
-            onChange={(e) => updateMessage(e.target.value)}
+            // onChange={(e) => updateMessage(e.target.value)}
           />
         </div>
         <input type='submit' value='Submit' className='contact-submit-btn' />

@@ -25,6 +25,7 @@
   position: fixed;
   opacity: 0.5;
   display: flex;
+  /* align-items: center; */
   top: 0;
 }
 .prod-photo-hidden {
@@ -45,6 +46,8 @@
   min-width: 40%; */
   border: 1vw solid rgb(64, 3, 90);
   /* top: 20%; */
+  line-height: 100vh;
+  align-self: center;
 }
 .arrow {
   position: fixed;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Photos.css';
 import anne1 from '../images/anne1.jpeg';
 import anne2 from '../images/anne2.jpeg';
@@ -42,6 +42,10 @@ function Photos({ updateBannerNav, setCurrentPage }) {
   setCurrentPage('Photos');
 
   const [focusIndex, setFocusIndex] = useState(0);
+  const [seePhoto, setSeePhoto] = useState('prod-photo-hidden');
+
+  const [prevDisable, setPrevDisable] = useState(false);
+  const [nextDisable, setNextDisable] = useState(false);
 
   const photoArr = [
     { src: anne1, id: 'anne1' },
@@ -82,14 +86,29 @@ function Photos({ updateBannerNav, setCurrentPage }) {
     { src: frosty2, id: 'frosty 2' },
   ];
 
-  const [seePhoto, setSeePhoto] = useState('prod-photo-hidden');
+  // useEffect(() => {
+  //   const focusedPhoto = document.querySelector('#focusedPhoto');
+  //   const imageHeight = focusedPhoto.clientHeight;
+  //   const windowHeight = window.innerHeight;
+  //   const topMeasurement = (windowHeight - imageHeight) / 2;
+  //   console.log(imageHeight, windowHeight, topMeasurement);
+  //   focusedPhoto.style = `top: ${topMeasurement}px;`;
+  // }, [focusIndex]);
 
-  const [prevDisable, setPrevDisable] = useState(false);
-  const [nextDisable, setNextDisable] = useState(false);
+  function centerFocusPhoto() {
+    const focusedPhoto = document.querySelector('#focusedPhoto');
+    const imageHeight = focusedPhoto.clientHeight;
+    const windowHeight = window.innerHeight;
+    const topMeasurement = (windowHeight - imageHeight) / 2;
+    console.log(imageHeight, windowHeight, topMeasurement);
+    focusedPhoto.style = `top: ${topMeasurement}px;`;
+  }
 
-  function focusPhoto(e) {
+  async function focusPhoto(e) {
+    console.log('image height in event', e.target.clientHeight);
     let idx = photoArr.findIndex((photo) => photo.id === e.target.id);
-    setFocusIndex(idx);
+    await setFocusIndex(idx);
+    // centerFocusPhoto();
     if (idx === 0) {
       setPrevDisable(true);
       setNextDisable(false);
@@ -101,36 +120,39 @@ function Photos({ updateBannerNav, setCurrentPage }) {
       setNextDisable(false);
     }
     setTimeout(() => setSeePhoto('prod-photo-visible'), 50);
+    centerFocusPhoto();
   }
 
   function unfocusPhoto() {
     setSeePhoto('prod-photo-hidden');
   }
 
-  function prevPhoto() {
+  async function prevPhoto() {
     setNextDisable(false);
     if (focusIndex - 1 === 0) {
       setPrevDisable(true);
     }
-    setFocusIndex(focusIndex - 1);
+    await setFocusIndex(focusIndex - 1);
+    centerFocusPhoto();
   }
 
-  function nextPhoto() {
+  async function nextPhoto() {
     setPrevDisable(false);
     if (focusIndex + 1 >= photoArr.length - 1) {
       setNextDisable(true);
     }
-    setFocusIndex(focusIndex + 1);
+    await setFocusIndex(focusIndex + 1);
+    centerFocusPhoto();
   }
 
-  if (document.querySelector('#focusedPhoto')) {
-    const focusedPhoto = document.querySelector('#focusedPhoto');
-    const imageHeight = focusedPhoto.clientHeight;
-    const windowHeight = window.innerHeight;
-    const topMeasurement = (windowHeight - imageHeight) / 2;
-    console.log(imageHeight, windowHeight, topMeasurement);
-    focusedPhoto.style = `top: ${topMeasurement}px;`;
-  }
+  // if (document.querySelector('#focusedPhoto')) {
+  // const focusedPhoto = document.querySelector('#focusedPhoto');
+  // const imageHeight = focusedPhoto.clientHeight;
+  // const windowHeight = window.innerHeight;
+  // const topMeasurement = (windowHeight - imageHeight) / 2;
+  // console.log(imageHeight, windowHeight, topMeasurement);
+  // focusedPhoto.style = `top: ${topMeasurement}px;`;
+  // }
 
   return (
     <div className='photo-album'>
@@ -146,6 +168,7 @@ function Photos({ updateBannerNav, setCurrentPage }) {
         className={`focused-photo ${seePhoto}`}
         alt='current production still'
         id='focusedPhoto'
+        style={{ top: '12px' }}
       ></img>
 
       {/* Arrows */}
@@ -154,7 +177,7 @@ function Photos({ updateBannerNav, setCurrentPage }) {
         onClick={prevPhoto}
         disabled={prevDisable}
       >
-        Previous
+        Prev
       </button>
       <button
         className={`arrow arrow-right ${seePhoto}`}
