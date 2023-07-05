@@ -224,7 +224,7 @@ function Photos({ updateBannerNav, setCurrentPage }) {
           ></img>
         ))}
       </div>
-      <h4>Other Show</h4>
+      <h4>Other Shows</h4>
       <div className='photo-section gallery'>
         {photoArr.slice(12).map((photo) => (
           <img
