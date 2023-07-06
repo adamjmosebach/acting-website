@@ -5,13 +5,15 @@
   /* height: 85vh; */
   justify-content: space-evenly;
   padding: 1vw;
-  /* margin: 2vw; */
-  background-color: rgba(0, 0, 0, 0.35);
+  /* margin: 2vw 2vw 0 2vw; */
+  /* background-color: rgba(0, 0, 0, 0.35); */
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.35));
   height: 110%;
 }
 .bio-pic {
   width: 30vw;
-  margin-left: 3vw;
+  margin-left: 3.5vw;
+  margin-right: -1vw;
   box-shadow: 10px -10px 10px grey;
 }
 .bio-container {
@@ -23,14 +25,14 @@
   align-items: center;
   justify-content: center;
   padding: 1vw 1.5vw;
-  line-height: 45px;
   color: rgb(245, 235, 224);
   font-family: Georgia, 'Times New Roman', Times, serif;
-  font-size: 1vw;
+  font-size: 1.25vw;
   font-weight: 300;
+  line-height: 2vw;
 }
 .bio-container p {
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
   width: 80%;
 }
 .bio-hi {
