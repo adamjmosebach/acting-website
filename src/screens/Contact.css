@@ -27,7 +27,7 @@
   height: 3vh;
 }
 .contact-label {
-  width: 10vw;
+  width: 15vw;
   text-align: right;
   line-height: 4vh;
   /* font-family: 'Great Vibes'; */
@@ -84,4 +84,16 @@
   font-size: 4vh;
   letter-spacing: 3.5px;
   text-shadow: 1px 1px 5px #555;
+}
+
+@media (max-width: 700px) {
+  .contact-label {
+    width: 30vw;
+  }
+  .contact-input {
+    width: 45vw;
+  }
+  .contact-message {
+    width: 45vw;
+  }
 }
