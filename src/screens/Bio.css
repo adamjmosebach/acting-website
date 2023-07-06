@@ -44,3 +44,30 @@
   /* width: 15vw; */
   opacity: 0.25;
 }
+
+
+@media (max-width: 950px) {
+  .bio-div {
+    display: block;
+  }
+  .bio-pic {
+    margin: 5vw 0 2vw 2vw;
+  }
+  .bio-container {
+    text-align: center;
+    width: 100%;
+    color: rgb(245, 235, 224);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3vw;
+    font-weight: 300;
+    line-height: 5vw;
+  }
+  .bio-container p {
+    /* margin-bottom: 0; */
+    width: 80%;
+  }
+  .signature {
+    width: 16vw;
+    opacity: 0.25;
+  }
+}
