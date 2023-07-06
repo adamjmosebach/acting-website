@@ -10,3 +10,9 @@
   /* height: 100%; */
   width: 65vw;
 }
+
+@media (max-width: 950px) {
+  .resume {
+    width: 85vw;
+  }
+}

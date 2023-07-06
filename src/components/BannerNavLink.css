@@ -9,7 +9,7 @@
   /* height: 15vh; */
   margin: 1vw;
   /* transition: all 3s; */
-  animation: fade-in 1s linear;
+  animation: fade-in 3s linear;
 }
 
 @keyframes fade-in {
