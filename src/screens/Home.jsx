@@ -20,7 +20,7 @@ function Home({ updateBannerNav }) {
         <img src={headshot} alt='headshot' className='headshot'></img>
       </div>
       <div className='headshot-container'>
-        <img src={MOTOE-flyer} alt='headshot' className='headshot'></img>
+        <img src={MOTOEflyer} alt='headshot' className='headshot'></img>
       </div>
     </div>
   )
