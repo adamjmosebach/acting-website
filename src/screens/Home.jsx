@@ -1,6 +1,6 @@
 import './Home.css'
 import headshot from '../images/headshot.jpg'
-import MOTOEflyer from '../images/MOTOE-flyer.jpg'
+import MOTOEflyer from '../images/MOTOEflyer.jpg'
 import HomeNavButton from '../components/HomeNavButton'
 
 function Home({ updateBannerNav }) {
