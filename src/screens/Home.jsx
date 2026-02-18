@@ -1,6 +1,6 @@
-import React from 'react'
 import './Home.css'
 import headshot from '../images/headshot.jpg'
+import MOTOEflyer from '../images/MOTOE-flyer.jpg'
 import HomeNavButton from '../components/HomeNavButton'
 
 function Home({ updateBannerNav }) {
@@ -18,6 +18,9 @@ function Home({ updateBannerNav }) {
       </div>
       <div className='headshot-container'>
         <img src={headshot} alt='headshot' className='headshot'></img>
+      </div>
+      <div className='headshot-container'>
+        <img src={MOTOE-flyer} alt='headshot' className='headshot'></img>
       </div>
     </div>
   )
