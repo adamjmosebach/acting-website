@@ -20,7 +20,7 @@ function Home({ updateBannerNav }) {
         <img src={headshot} alt='headshot' className='headshot'></img>
       </div>
       <div className='headshot-container'>
-        <img src={MOTOEflyer} alt='headshot' className='headshot'></img>
+        <href src='https://cur8.com/21064/project/135538'><img src={MOTOEflyer} alt='headshot' className='headshot'></img></href>
       </div>
     </div>
   )
