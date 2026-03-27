@@ -41,5 +41,8 @@
     "postcss-safe-parser": {
       "postcss": "^8.4.4"
     }
+  },
+  "engines": {
+    "node": ">=14"
   }
 }
