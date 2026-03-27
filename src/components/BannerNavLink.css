@@ -75,3 +75,10 @@
   /* text-shadow: 5px 5px 5px orange; */
   color: rgb(252, 228, 178);
 }
+
+@media (max-width: 600px) {
+  .banner-nav-btn-link {
+    font-size: 2.6vw;
+    line-height: 0.5vh;
+  }
+}
