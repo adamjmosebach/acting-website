@@ -75,6 +75,7 @@
   background-color: rgb(230, 180, 88);
 }
 .contact-reply {
+  margin: auto;
   margin-top: 20vh;
   color: rgb(230, 180, 88);
   font-family: 'Pinyon Script';
@@ -82,7 +83,6 @@
   font-size: 6vh;
   letter-spacing: 3.5px;
   text-shadow: 1px 1px 5px #555;
-  margin: auto;
 }
 
 @media (max-width: 700px) {

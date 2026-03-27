@@ -1,44 +1,68 @@
-import React, { useState, useEffect } from 'react';
-import './Contact.css';
-import emailjs from 'emailjs-com';
+import React, { useState, useEffect } from "react";
+import "./Contact.css";
+import emailjs from "emailjs-com";
 
 function Contact({ updateBannerNav, setCurrentPage }) {
-  const [name, updateName] = useState('');
+  const [name, updateName] = useState("");
   // const [email, updateEmail] = useState('');
   // const [message, updateMessage] = useState('');
   const [reply, setReply] = useState(false);
 
   useEffect(() => {
     updateBannerNav(true);
-    setCurrentPage('Contact');
+    setCurrentPage("Contact");
     setReply(false);
   }, []);
 
+  // function handleSubmit(e) {
+  //   e.preventDefault();
+  //   // info found at https://dashboard.emailjs.com/admin
+  //   emailjs
+  //     .sendForm(
+  //       'service_8ybfrzs', // serviceID
+  //       'template_y4mhevf', // templateID
+  //       e.target, // form
+  //       'txKw-cNrodteK2L5h' // publicKey
+  //     )
+  //     .then(
+  //       (result) => {
+  //         console.log(result.text);
+  //       },
+  //       (error) => {
+  //         console.log(error.text);
+  //       }
+  //     );
+  //   setReply(true);
+  // }
   function handleSubmit(e) {
     e.preventDefault();
-    // info found at https://dashboard.emailjs.com/admin
     emailjs
-      .sendForm(
-        'service_8ybfrzs', // serviceID
-        'template_y4mhevf', // templateID
-        e.target, // form
-        'txKw-cNrodteK2L5h' // publicKey
+      .send(
+        "service_8ybfrzs", // serviceID
+        "template_y4mhevf", // templateID
+        {
+          "contact-name": e.target["contact-name"].value,
+          "contact-email": e.target["contact-email"].value,
+          "contact-message": e.target["contact-message"].value,
+        },
+        "txKw-cNrodteK2L5h", // publicKey
       )
       .then(
         (result) => {
-          console.log(result.text);
+          console.log("Success:", result.text);
+          setReply(true);
         },
         (error) => {
-          console.log(error.text);
-        }
+          console.error("Failed:", error.text);
+          alert("Something went wrong. Please try again.");
+        },
       );
-    setReply(true);
   }
 
   if (reply) {
     return (
-      <div className='contact-reply'>
-        <h3>{`Thank you for your message, ${name.split(' ')[0]}!`}</h3>
+      <div className="contact-reply">
+        <h3>{`Thank you for your message, ${name.split(" ")[0]}!`}</h3>
         <h3>I will respond shortly!</h3>
         <h3>~Adam</h3>
       </div>
@@ -46,45 +70,45 @@ function Contact({ updateBannerNav, setCurrentPage }) {
   }
 
   return (
-    <div className='contact-div'>
-      <h1 className='contact-title'>Contact me</h1>
-      <form className='contact-form' onSubmit={handleSubmit}>
-        <div className='contact-label-and-input'>
-          <label className='contact-label' htmlFor='contact-name'>
-            Name:{' '}
+    <div className="contact-div">
+      <h1 className="contact-title">Contact me</h1>
+      <form className="contact-form" onSubmit={handleSubmit}>
+        <div className="contact-label-and-input">
+          <label className="contact-label" htmlFor="contact-name">
+            Name:{" "}
           </label>
           <input
-            id='contact-name'
-            name='contact-name'
-            className='contact-input'
-            type='text'
+            id="contact-name"
+            name="contact-name"
+            className="contact-input"
+            type="text"
             onChange={(e) => updateName(e.target.value)}
           />
         </div>
-        <div className='contact-label-and-input'>
-          <label className='contact-label' htmlFor='contact-email'>
-            Email:{' '}
+        <div className="contact-label-and-input">
+          <label className="contact-label" htmlFor="contact-email">
+            Email:{" "}
           </label>
           <input
-            id='contact-email'
-            name='contact-email'
-            className='contact-input'
-            type='email'
+            id="contact-email"
+            name="contact-email"
+            className="contact-input"
+            type="email"
             // onChange={(e) => updateEmail(e.target.value)}
           />
         </div>
-        <div className='contact-label-and-input'>
-          <label className='contact-label' htmlFor='contact-message'>
-            Message:{' '}
+        <div className="contact-label-and-input">
+          <label className="contact-label" htmlFor="contact-message">
+            Message:{" "}
           </label>
           <textarea
-            id='contact-message'
-            name='contact-message'
-            className='contact-message'
+            id="contact-message"
+            name="contact-message"
+            className="contact-message"
             // onChange={(e) => updateMessage(e.target.value)}
           />
         </div>
-        <input type='submit' value='Submit' className='contact-submit-btn' />
+        <input type="submit" value="Submit" className="contact-submit-btn" />
       </form>
     </div>
   );
