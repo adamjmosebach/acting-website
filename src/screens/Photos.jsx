@@ -38,7 +38,7 @@ import frosty1 from "../images/frosty1.jpg";
 import frosty2 from "../images/frosty2.jpg";
 import poirot1 from "../images/poirot1.jpg";
 import poirot2 from "../images/poirot2.jpg";
-import poirot3 from "../images/poirot3.jpg";
+import poirot5 from "../images/poirot5.jpg";
 import poirot4 from "../images/poirot4.jpg";
 
 function Photos({ updateBannerNav, setCurrentPage }) {
@@ -53,9 +53,9 @@ function Photos({ updateBannerNav, setCurrentPage }) {
 
   const photos = {
     poirot: [
-      { src: poirot1, id: "poirot1" },
+      { src: poirot5, id: "poirot5" },
       { src: poirot2, id: "poirot2" },
-      { src: poirot3, id: "poirot3" },
+      { src: poirot1, id: "poirot1" },
       { src: poirot4, id: "poirot4" },
     ],
     anne: [
@@ -107,7 +107,7 @@ function Photos({ updateBannerNav, setCurrentPage }) {
   const photoArr = [
     { src: poirot1, id: "poirot1" },
     { src: poirot2, id: "poirot2" },
-    { src: poirot3, id: "poirot3" },
+    { src: poirot5, id: "poirot5" },
     { src: poirot4, id: "poirot4" },
     { src: anne1, id: "anne1" },
     { src: anne2, id: "anne2" },
