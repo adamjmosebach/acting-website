@@ -25,7 +25,7 @@ function Home({ updateBannerNav }) {
         <a href="https://cur8.com/21064/project/135538" target="_blank">
           <img src={MOTOEflyer} alt="headshot" className="current-show"></img>
         </a>
-      </div>  */}
+      </div> */}
     </div>
   );
 }
