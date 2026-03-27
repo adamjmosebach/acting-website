@@ -38,14 +38,14 @@ function Contact({ updateBannerNav, setCurrentPage }) {
     e.preventDefault();
     emailjs
       .send(
-        "service_8ybfrzs",
-        "template_y4mhevf",
+        "service_8ybfrzs", // serviceID
+        "template_y4mhevf", // templateID
         {
           "contact-name": e.target["contact-name"].value,
           "contact-email": e.target["contact-email"].value,
           "contact-message": e.target["contact-message"].value,
         },
-        "txKw-cNrodteK2L5h",
+        "txKw-cNrodteK2L5h", // publicKey
       )
       .then(
         (result) => {
