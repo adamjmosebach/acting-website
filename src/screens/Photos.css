@@ -79,3 +79,8 @@
   width: 96vw;
   justify-content: space-evenly;
 }
+@media (max-width: 750px) {
+  .arrow {
+    width: 9.25vw;
+  }
+}
