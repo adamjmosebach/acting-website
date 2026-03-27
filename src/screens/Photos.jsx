@@ -105,9 +105,9 @@ function Photos({ updateBannerNav, setCurrentPage }) {
   };
 
   const photoArr = [
-    { src: poirot1, id: "poirot1" },
-    { src: poirot2, id: "poirot2" },
     { src: poirot5, id: "poirot5" },
+    { src: poirot2, id: "poirot2" },
+    { src: poirot1, id: "poirot1" },
     { src: poirot4, id: "poirot4" },
     { src: anne1, id: "anne1" },
     { src: anne2, id: "anne2" },
