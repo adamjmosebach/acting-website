@@ -75,13 +75,14 @@
   background-color: rgb(230, 180, 88);
 }
 .contact-reply {
-  margin-top: 15vh;
+  margin-top: 20vh;
   color: rgb(230, 180, 88);
-  font-family: cursive;
-  font-style: italic;
-  font-size: 4vh;
+  font-family: 'Pinyon Script';
+  /* font-style: italic; */
+  font-size: 6vh;
   letter-spacing: 3.5px;
   text-shadow: 1px 1px 5px #555;
+  margin: auto;
 }
 
 @media (max-width: 700px) {
@@ -93,5 +94,9 @@
   }
   .contact-message {
     width: 45vw;
+  }
+  .contact-reply {
+    width: 90vw;
+    font-size: 5vh;
   }
 }
