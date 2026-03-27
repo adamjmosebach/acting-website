@@ -4,12 +4,47 @@
   align-items: center;
   color: white;
   height: 85vh;
+  width: 85vw;
+  margin: auto;
+}
+.home-group-for-phones {
+  display: flex; 
+  justify-content: space-between;
+  width: 90%;
+  justify-content: center;
+  align-items: center; 
+  margin-right: 2%
+}
+.home-nav {
+  /* width: 30%; */
 }
 .headshot-container {
-  /* height: 85vh; */
+  height: 70vh;
+  margin: auto;
+  text-align: center;
+  /* width: 30%; */
   display: flex;
-  /* height: ; */
+  justify-content: center;
+  align-items: center; 
 }
 .headshot {
-  height: 57.25vh;
+  height: 90%;
+  width: 100%
+}
+.current-show-container {
+  margin: auto;
+  width: 35%;
+}
+.current-show {
+  /* height: 60vh; */
+  width: 100%;
+}
+@media (max-width: 600px) {
+  .home-div {
+    flex-direction: column;
+  }
+  .current-show-container {
+  margin: auto;
+  width: 85%;
+}
 }
