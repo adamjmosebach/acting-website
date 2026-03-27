@@ -233,21 +233,20 @@ function Photos({ updateBannerNav, setCurrentPage }) {
       ></img>
 
       {/* Arrows */}
-      <button
+       <button
         className={`arrow arrow-left ${seePhoto}`}
         onClick={prevPhoto}
         disabled={prevDisable}
       >
-        Prev
+        {"<"}
       </button>
       <button
         className={`arrow arrow-right ${seePhoto}`}
         onClick={nextPhoto}
         disabled={nextDisable}
       >
-        Next
+        {">"}
       </button>
-
       {/* Pictures */}
       <h4>Murder on the Orient Express</h4>
       <div className="photo-section">

@@ -52,12 +52,13 @@
 .arrow {
   position: fixed;
   text-align: center;
-  justify-content: right;
+  /* justify-content: right; */
   color: white;
   background-color: rgb(64, 3, 90);
-  width: 8vw;
+  width: 7vw;
   padding: 1vw;
-  top: 45vh;
+  top: 49vh;
+  /* line-height: 100vh; */
 }
 .arrow:disabled {
   background-color: grey;
