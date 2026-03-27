@@ -13,14 +13,16 @@
   border-radius: 7px;
   width: 25vw;
   height: 9vh;
-  line-height: 9vh;
   text-decoration: none;
   font-weight: 700;
-  margin: 2.5vh;
+  margin: 1.5vh 1.5vw 1.5vh 0;
   font-size: 3.25vh;
   /* transition-timing-function: all linear; */
   transition: all 0.5s;
   font-family: 'Great Vibes';
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .home-nav-button:hover {
   box-shadow: -8px 18px 15px black;
@@ -28,4 +30,19 @@
   transition: all 0.5s linear;
   color: rgb(82, 54, 92);
   background-color: rgb(230, 180, 88);
+}
+@media (max-width: 750px) {
+  .home-nav-button {
+    width: 32vw;
+    height: 7vh;
+    margin: 0.85vh 1.5vw 0.85vh 0;
+  }
+}
+@media (max-width: 400px) {
+  .home-nav-button {
+    width: 32vw;
+    height: 4vh;
+    margin: 0.85vh 1.5vw 0.85vh 0;
+    font-size: 2vh;
+  }
 }
