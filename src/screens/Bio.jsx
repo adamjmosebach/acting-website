@@ -41,7 +41,7 @@ function Bio({ updateBannerNav, setCurrentPage }) {
           </p>
           <p>
             Since then, I have made a career out of acting - having been in over
-            170 productions. I've performed in NYC, at Avery Fisher Hall, in
+            180 productions. I've performed in NYC, at Avery Fisher Hall, in
             many regional productions, have been in national and international
             tours, had roles on TV and the internet, and am an EMC and a member
             of SAG-AFTRA.
