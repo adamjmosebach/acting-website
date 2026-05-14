@@ -2,30 +2,90 @@ import "./Home.css";
 // import headshot from "../images/headshot.jpg";
 import headshot from "../images/headshot-bearded-darker-background.png";
 import MOTOEflyer from "../images/MOTOEflyer.jpg";
+import ThirtyNineStepsPoster from "../images/39-Steps-poster.jpg";
 import HomeNavButton from "../components/HomeNavButton";
+import { useState, useEffect } from "react";
+
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height,
+  };
+}
+
+function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions(),
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return windowDimensions;
+}
 
 function Home({ updateBannerNav }) {
   updateBannerNav(false);
 
-  return (
-    <div className="home-div">
+  console.log("window width", useWindowDimensions().width);
+  const smallWindow = useWindowDimensions().width <= 1450;
+
+  let showCurrentShowSection = false;
+
+  showCurrentShowSection = true;
+
+  const navButtonSection = (
+    <div className={`home-nav ${showCurrentShowSection ? "yesCurrentShow" : "noCurrentShow"}`}>
+      <HomeNavButton name="Bio" linkTo="/bio" />
+      <HomeNavButton name="Resume" linkTo="/resume" />
+      <HomeNavButton name="Photos" linkTo="/photos" />
+      <HomeNavButton name="Media" linkTo="/media" />
+      <HomeNavButton name="Contact" linkTo="/contact" />
+    </div>
+  );
+
+  const headshotSection = (
+    <div
+      className={`headshot-container ${showCurrentShowSection ? "yesCurrentShow" : "noCurrentShow"}`}
+    >
+      <img src={headshot} alt="headshot" className={`headshot ${showCurrentShowSection ? "headshot-yes-current-show" : "headshot-no-current-show"}`}></img>
+    </div>
+  );
+
+  const currentShowSection = (
+    <div
+      className={`current-show-container ${showCurrentShowSection ? "yesCurrentShow" : "noCurrentShow"}`}
+    >
+      <a href="https://www.hamptontheatre.org/?page_id=7675" target="_blank">
+        <img
+          src={ThirtyNineStepsPoster}
+          alt="39 Steps"
+          className="current-show"
+        ></img>
+      </a>
+    </div>
+  );
+
+  return smallWindow ? (
+    <div className={`home-div ${showCurrentShowSection ? "" : "home-div-no-show"}`}>
       <div className="home-group-for-phones">
-        <div className="home-nav">
-          <HomeNavButton name="Bio" linkTo="/bio" />
-          <HomeNavButton name="Resume" linkTo="/resume" />
-          <HomeNavButton name="Photos" linkTo="/photos" />
-          <HomeNavButton name="Media" linkTo="/media" />
-          <HomeNavButton name="Contact" linkTo="/contact" />
-        </div>
-        <div className="headshot-container">
-          <img src={headshot} alt="headshot" className="headshot"></img>
-        </div>
+        {navButtonSection}
+        {headshotSection}
       </div>
-      {/* <div className="current-show-container">
-        <a href="https://cur8.com/21064/project/135538" target="_blank">
-          <img src={MOTOEflyer} alt="headshot" className="current-show"></img>
-        </a>
-      </div>  */}
+      {showCurrentShowSection && currentShowSection}
+    </div>
+  ) : (
+    <div className={`home-div ${showCurrentShowSection ? "" : "home-div-no-show"}`}>
+      {navButtonSection}
+      {headshotSection}
+      {showCurrentShowSection && currentShowSection}
     </div>
   );
 }
