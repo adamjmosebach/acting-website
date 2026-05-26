@@ -221,12 +221,19 @@
     /* width: 85%; */
     height: 60vh;
   }
-  .review {
+  /* .review {
     position: absolute;
     top: -90px;
     left: unset;
     right: -195px;
     width: 80%;
+  } */
+  .review {
+    position: absolute;
+    top: -11.5%;
+    left: unset;
+    right: -38%;
+    width: 70%;
   }
 }
 
