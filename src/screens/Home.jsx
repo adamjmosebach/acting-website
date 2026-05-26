@@ -1,7 +1,7 @@
 import "./Home.css";
 // import headshot from "../images/headshot.jpg";
 import headshot from "../images/headshot-bearded-darker-background.png";
-import MOTOEflyer from "../images/MOTOEflyer.jpg";
+import thirtyNineReview from "../images/27east-transparent-red.png";
 import ThirtyNineStepsPoster from "../images/39-Steps-poster.jpg";
 import HomeNavButton from "../components/HomeNavButton";
 import { useState, useEffect } from "react";
@@ -63,13 +63,20 @@ function Home({ updateBannerNav }) {
     <div
       className={`current-show-container ${showCurrentShowSection ? "yesCurrentShow" : "noCurrentShow"}`}
     >
-      <a href="https://www.hamptontheatre.org/?page_id=7675" target="_blank">
+      <div className='show-and-review'>
+        <a href="https://www.hamptontheatre.org/?page_id=7675" target="_blank">
+          <img
+            src={ThirtyNineStepsPoster}
+            alt="39 Steps"
+            className="current-show"
+          ></img>
+        </a>
         <img
-          src={ThirtyNineStepsPoster}
-          alt="39 Steps"
-          className="current-show"
+          src={thirtyNineReview}
+          alt="27east review"
+          className='review'
         ></img>
-      </a>
+      </div>
     </div>
   );
 

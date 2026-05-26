@@ -94,6 +94,16 @@
 .home-div-no-show {
   justify-content: center;
 }
+.show-and-review {
+  position: relative;
+  display: inline-block;
+}
+.review {
+  position: absolute;
+  top: -180px;
+  left: -180px;
+  width: 100%;
+}
 
 
 /* @media (max-width: 1450px) { */
@@ -211,7 +221,15 @@
     /* width: 85%; */
     height: 60vh;
   }
+  .review {
+    position: absolute;
+    top: -80px;
+    left: unset;
+    right: -340px;
+    width: 100%;
+  }
 }
+
  @media (max-width: 1000px) {
    .headshot-container {
     width: 57.5vw;
