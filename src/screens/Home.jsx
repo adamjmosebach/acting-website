@@ -1,7 +1,8 @@
 import "./Home.css";
 // import headshot from "../images/headshot.jpg";
 import headshot from "../images/headshot-bearded-darker-background.png";
-import thirtyNineReview from "../images/27east-transparent-red.png";
+import thirtyNineReview from "../images/27east-transparent-red-3.png";
+import thirtyNineReviewReverse from "../images/27east-transparent-red-reverse.png";
 import ThirtyNineStepsPoster from "../images/39-Steps-poster.jpg";
 import HomeNavButton from "../components/HomeNavButton";
 import { useState, useEffect } from "react";
@@ -72,7 +73,7 @@ function Home({ updateBannerNav }) {
           ></img>
         </a>
         <img
-          src={thirtyNineReview}
+          src={smallWindow ? thirtyNineReviewReverse : thirtyNineReview}
           alt="27east review"
           className='review'
         ></img>
