@@ -5,6 +5,7 @@ import MOTOEflyer from "../images/MOTOEflyer.jpg";
 import ThirtyNineStepsPoster from "../images/39-Steps-poster.jpg";
 import HomeNavButton from "../components/HomeNavButton";
 import { useState, useEffect } from "react";
+import Review from "../components/Review.jsx";
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
@@ -70,6 +71,18 @@ function Home({ updateBannerNav }) {
           className="current-show"
         ></img>
       </a>
+      <div className="reviews">
+        <Review
+          text="The production is led by Adam Mosebach as Richard Hannay. He is genuine and eases through the comedic moments and movements with grace and vigor. He also plays the sensitive moments in an audience-winning way. He is a special talent."
+          source="Hamptons.com"
+          sourceLink="https://hamptons.com/hampton-theatre-companys-the-39-steps-delivers-nonstop-laughs-and-brilliant-performances/?shem=rimspwouoe,"
+        />
+        <Review
+          text="All four actors are pitch-perfect and play off each other like they’ve been doing this show for years"
+          source="27east.com"
+          sourceLink="https://www.27east.com/arts-living/stage-screen/article_ce952aa6-978c-477d-a576-2192d3c2c07c.html"
+        />
+      </div>
     </div>
   );
 
