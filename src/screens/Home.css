@@ -98,6 +98,16 @@ a {
   justify-content: space-evenly;
   width: 50%; /* Takes up the other half of the current-show-container */
 }
+.show-and-review {
+  position: relative;
+  display: inline-block;
+}
+.review {
+  position: absolute;
+  top: -180px;
+  left: -180px;
+  width: 100%;
+}
 
 .reviewCard {
   background-color: rgb(82, 54, 92);
@@ -173,6 +183,20 @@ a {
   .reviews {
     text-align: center;
     width: 40%;
+  }
+  /* .review {
+    position: absolute;
+    top: -90px;
+    left: unset;
+    right: -195px;
+    width: 80%;
+  } */
+  .review {
+    position: absolute;
+    top: -11.5%;
+    left: unset;
+    right: -38%;
+    width: 70%;
   }
 }
 
