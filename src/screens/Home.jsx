@@ -57,7 +57,7 @@ function Home({ updateBannerNav }) {
     <div
       className={`headshot-container ${showCurrentShowSection ? "yesCurrentShow" : "noCurrentShow"}`}
     >
-      <img src={headshot} alt="headshot" className={`headshot ${showCurrentShowSection ? "headshot-yes-current-show" : "headshot-no-current-show"}`}></img>
+      <img src={headshot} alt="headshot" className={`headshot ${showCurrentShowSection ? "headshot-yes-current-show" : "headshot-no-current-show"}`} />
     </div>
   );
 
@@ -74,10 +74,10 @@ function Home({ updateBannerNav }) {
           ></img>
         </a>
         <img
-          src={smallWindow ? thirtyNineReviewReverse : thirtyNineReview}
-          alt="27east review"
-          className='review'
-        ></img>
+          src={ThirtyNineStepsPoster}
+          alt="39 Steps"
+          className="current-show"
+        />
       </a>
       <div className="reviews">
         <Review
