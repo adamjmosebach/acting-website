@@ -44,7 +44,9 @@ function Home({ updateBannerNav }) {
   showCurrentShowSection = true;
 
   const navButtonSection = (
-    <div className={`home-nav ${showCurrentShowSection ? "yesCurrentShow" : "noCurrentShow"}`}>
+    <div
+      className={`home-nav ${showCurrentShowSection ? "yesCurrentShow" : "noCurrentShow"}`}
+    >
       <HomeNavButton name="Bio" linkTo="/bio" />
       <HomeNavButton name="Resume" linkTo="/resume" />
       <HomeNavButton name="Photos" linkTo="/photos" />
@@ -57,7 +59,11 @@ function Home({ updateBannerNav }) {
     <div
       className={`headshot-container ${showCurrentShowSection ? "yesCurrentShow" : "noCurrentShow"}`}
     >
-      <img src={headshot} alt="headshot" className={`headshot ${showCurrentShowSection ? "headshot-yes-current-show" : "headshot-no-current-show"}`} />
+      <img
+        src={headshot}
+        alt="headshot"
+        className={`headshot ${showCurrentShowSection ? "headshot-yes-current-show" : "headshot-no-current-show"}`}
+      />
     </div>
   );
 
@@ -65,7 +71,7 @@ function Home({ updateBannerNav }) {
     <div
       className={`current-show-container ${showCurrentShowSection ? "yesCurrentShow" : "noCurrentShow"}`}
     >
-      <div className='show-and-review'>
+      <div className="show-and-review">
         <a href="https://www.hamptontheatre.org/?page_id=7675" target="_blank">
           <img
             src={ThirtyNineStepsPoster}
@@ -73,29 +79,26 @@ function Home({ updateBannerNav }) {
             className="current-show"
           ></img>
         </a>
-        <img
-          src={ThirtyNineStepsPoster}
-          alt="39 Steps"
-          className="current-show"
-        />
-      </a>
-      <div className="reviews">
-        <Review
-          text="The production is led by Adam Mosebach as Richard Hannay. He is genuine and eases through the comedic moments and movements with grace and vigor. He also plays the sensitive moments in an audience-winning way. He is a special talent."
-          source="Hamptons.com"
-          sourceLink="https://hamptons.com/hampton-theatre-companys-the-39-steps-delivers-nonstop-laughs-and-brilliant-performances/?shem=rimspwouoe,"
-        />
-        <Review
-          text="All four actors are pitch-perfect and play off each other like they’ve been doing this show for years"
-          source="27east.com"
-          sourceLink="https://www.27east.com/arts-living/stage-screen/article_ce952aa6-978c-477d-a576-2192d3c2c07c.html"
-        />
+        <div className="reviews">
+          <Review
+            text="The production is led by Adam Mosebach as Richard Hannay. He is genuine and eases through the comedic moments and movements with grace and vigor. He also plays the sensitive moments in an audience-winning way. He is a special talent."
+            source="Hamptons.com"
+            sourceLink="https://hamptons.com/hampton-theatre-companys-the-39-steps-delivers-nonstop-laughs-and-brilliant-performances/?shem=rimspwouoe,"
+          />
+          <Review
+            text="All four actors are pitch-perfect and play off each other like they’ve been doing this show for years"
+            source="27east.com"
+            sourceLink="https://www.27east.com/arts-living/stage-screen/article_ce952aa6-978c-477d-a576-2192d3c2c07c.html"
+          />
+        </div>
       </div>
     </div>
   );
 
   return smallWindow ? (
-    <div className={`home-div ${showCurrentShowSection ? "" : "home-div-no-show"}`}>
+    <div
+      className={`home-div ${showCurrentShowSection ? "" : "home-div-no-show"}`}
+    >
       <div className="home-group-for-phones">
         {navButtonSection}
         {headshotSection}
@@ -103,7 +106,9 @@ function Home({ updateBannerNav }) {
       {showCurrentShowSection && currentShowSection}
     </div>
   ) : (
-    <div className={`home-div ${showCurrentShowSection ? "" : "home-div-no-show"}`}>
+    <div
+      className={`home-div ${showCurrentShowSection ? "" : "home-div-no-show"}`}
+    >
       {navButtonSection}
       {headshotSection}
       {showCurrentShowSection && currentShowSection}
