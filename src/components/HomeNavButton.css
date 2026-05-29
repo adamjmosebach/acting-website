@@ -39,11 +39,11 @@
     margin: 0.85vh 1.5vw 0.85vh 0;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   .home-nav-button {
     width: 32vw;
-    height: 4vh;
+    height:11vw;
     margin: 0.85vh 1.5vw 0.85vh 0;
-    font-size: 2vh;
+    font-size: 2.5vh;
   }
 }
