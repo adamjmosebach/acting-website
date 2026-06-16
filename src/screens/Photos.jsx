@@ -40,6 +40,10 @@ import poirot1 from "../images/poirot1.jpg";
 import poirot2 from "../images/poirot2.jpg";
 import poirot5 from "../images/poirot5.jpg";
 import poirot4 from "../images/poirot4.jpg";
+import thirtyNineH1 from "../images/thirtyNine-h-1.jpg";
+import thirtyNineH2 from "../images/thirtyNine-h-2.jpg";
+import thirtyNineH3 from "../images/thirtyNine-h-3.jpg";
+import thirtyNineH4 from "../images/thirtyNine-h-4.jpg";
 
 function Photos({ updateBannerNav, setCurrentPage }) {
   updateBannerNav(true);
@@ -52,6 +56,12 @@ function Photos({ updateBannerNav, setCurrentPage }) {
   const [nextDisable, setNextDisable] = useState(false);
 
   const photos = {
+    thirtyNineH: [
+      { src: thirtyNineH1, id: "thirtyNineH1" },
+      { src: thirtyNineH2, id: "thirtyNineH2" },
+      { src: thirtyNineH3, id: "thirtyNineH3" },
+      { src: thirtyNineH4, id: "thirtyNineH4" },
+    ],
     poirot: [
       { src: poirot5, id: "poirot5" },
       { src: poirot2, id: "poirot2" },
@@ -105,6 +115,10 @@ function Photos({ updateBannerNav, setCurrentPage }) {
   };
 
   const photoArr = [
+    { src: thirtyNineH1, id: "thirtyNineH1" },
+    { src: thirtyNineH2, id: "thirtyNineH2" },
+    { src: thirtyNineH3, id: "thirtyNineH3" },
+    { src: thirtyNineH4, id: "thirtyNineH4" },
     { src: poirot5, id: "poirot5" },
     { src: poirot2, id: "poirot2" },
     { src: poirot1, id: "poirot1" },
@@ -248,6 +262,18 @@ function Photos({ updateBannerNav, setCurrentPage }) {
         {">"}
       </button>
       {/* Pictures */}
+      <h4>The 39 Steps</h4>
+      <div className="photo-section">
+        {photos.thirtyNineH.map((photo) => (
+          <img
+            src={photo.src}
+            id={photo.id}
+            className="prod-photo"
+            alt="murder on the orient express"
+            onClick={focusPhoto}
+          ></img>
+        ))}
+      </div>
       <h4>Murder on the Orient Express</h4>
       <div className="photo-section">
         {photos.poirot.map((photo) => (
